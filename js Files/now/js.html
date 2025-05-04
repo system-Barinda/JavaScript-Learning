@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>barinda</title>
+    <style>
+     #searchResults{
+        width: 60%;
+        background: gray;
+        color: black;
+        box-shadow: 0px 4px 6px rgba(0,0,0,1);
+        font-size: 25px;
+       
+        
+     }
+     input{
+        height: 50px;
+        width: 500px;
+        font-size: 25px;
+        color: black;
+        outline: none;
+
+     }
+     ul li{
+        list-style: decimal;
+        cursor: pointer;
+     }
+     li:hover{
+        background: green;
+        color:white;
+        width: 100%;
+     }
+    </style>
+</head>
+<body>
+    <center>
+        <h1> search word</h1> <hr> <br>
+        <input type="text" id="searchInput" oninput="searchArray()"> <br><br>
+        <div id="searchResults">
+
+        </div>
+    </center>
+    <script>
+        const arrayText = ["merci","Barinda","Home","Geat","Drill","Great","system","be oke","den","dey","eraber","laze","settings","log out","only that"];
+        function searchArray()
+        {
+          const query = document.getElementById("searchInput").value.toLowerCase();
+          
+          let  results = arrayText.filter(name => name.toLocaleLowerCase().includes(query));
+          const resultDiv = document.getElementById("searchResults");
+          if(results.length > 0)
+          {
+            resultDiv.innerHTML = "<ul>" + results.map(name => `<li>${name}</li>`).join('') + " </ul>";
+          }
+          else {
+            resutDiv.innerHTML = "<p> data not found </p>";
+          }
+        }
+    </script>
+</body>
+</html>

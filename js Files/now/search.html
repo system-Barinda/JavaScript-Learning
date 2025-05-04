@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>system barinda</title>
+</head>
+<body>
+    
+
+    <style>
+        #ball{
+            width: 30px;
+            height: 30px;
+            background: green;
+            border: none;
+            border-radius: 50%;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+    </style>
+
+       <div id="ball"> </div>
+       <script>
+        let ball = document.getElementById("ball");
+        let posX = 100,posY = 100;
+        document.addEventListener("keydown", function(event){
+         if (event.key === "ArrowLeft") posX -= 10;
+         if (event.key === "ArrowRight") posX += 10;
+         if (event.key === "ArrowUp") posY -= 10;
+         if (event.key === "ArrowDown") posY += 10;
+       ball.style.left = posX + "px";
+       ball.style.top = posY + "px";
+
+        });
+       </script>
+</body>
+</html>

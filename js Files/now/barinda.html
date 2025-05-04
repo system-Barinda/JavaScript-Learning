@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>barinda</title>
+    <style>
+        body{
+            justify-content: center;
+            text-align: center;
+            justify-items: center;
+        }
+        input{
+            height: 50px;
+            width: 400px;
+            outline: none;
+            color: black;
+            border-radius: 5px;
+            font-size: 30px;
+        }
+        button
+        {
+            padding: 1rem;
+            color: white;
+            font-size: 25px;
+            background: green;
+            cursor: pointer;
+            border: none;
+
+        }
+    </style>
+</head>
+<body>
+        <input type="text" id="inputBarinda" name="inputBarinda" > <br><br>
+        <button id="capitalized">
+            check that
+        </button>  <br>
+        <p id="printWord"></p>
+  <script>
+     const button = document.getElementById("capitalized");
+     button.addEventListener("click", () => {
+    
+  
+     let getInput = document.getElementById("inputBarinda").value;
+     let wordChange = ["o","i","u","a","e"];
+     let results = " ";
+     for( let char of getInput)
+           {
+                if(wordChange.includes(char.toLowerCase()))
+                {
+                  results += char.toUpperCase();
+                }
+                else{
+                    results += char;
+                }
+           }
+           document.getElementById("printWord").innerText = results;
+        });  
+  </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dynamic List</title>
+</head>
+<body>
+    <h2>Dynamic List</h2>
+    <button onclick="addItem()">Add Item</button>
+    <ul id="myList"></ul>
+
+    <script>
+        function addItem() {
+            let list = document.getElementById("myList");
+            let newItem = document.createElement("li");
+            newItem.textContent = "New Item";
+
+            let removeBtn = document.createElement("button");
+            removeBtn.textContent = "Remove";
+            removeBtn.onclick = function () {
+                list.removeChild(newItem);
+            };
+
+            newItem.appendChild(removeBtn);
+            list.appendChild(newItem);
+        }
+    </script>
+</body>
+</html>

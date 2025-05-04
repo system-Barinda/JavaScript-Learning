@@ -1,0 +1,28 @@
+<style>
+    #car {
+        width: 50px;
+        height: 30px;
+        background-color: green;
+        position: absolute;
+        top: 200px;
+        left: 0px;
+    }
+</style>
+
+<div id="car"></div>
+
+<script>
+    let car = document.getElementById("car");
+    let x = 0;
+
+    function moveCar() {
+        x += 2; // Increase position
+        car.style.left = x + "px";
+
+        if (x < window.innerWidth - 50) {
+            requestAnimationFrame(moveCar); // Continue animation
+        }
+    }
+
+    moveCar(); // Start animation
+</script>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add Two Numbers with Delay</title>
+    <style>
+      input{
+        height: 30px;
+        width: 200px;
+        outline: none;
+      }
+    </style>
+</head>
+<body>
+ <div class="container">
+  <label for=""> number :1</label> <br>
+  <input type="number" id="num1"> <br>
+  <label for=""> number :2</label> <br>
+  <input type="number" id="num2"> <br>
+  <br>
+  <button id="addNumber"> add number</button> <br>
+  <br>
+  <p id="display" style="height: 50px; width: 200px; 
+  border: 1px solid green; justify-content: center;
+  text-align: center; color: brown; font-size: 20px;"></p>
+ </div>
+
+ <script>
+ document.getElementById("addNumber").addEventListener("click", function ()
+{
+  const num1 = parseFloat(document.getElementById("num1").value);
+  const num2 = parseFloat(document.getElementById("num2").value);
+  const result = num1 + num2;
+  document.getElementById("display").innerHTML = "please wait 5s!.....";
+  setTimeout(() => {
+    document.getElementById("display").innerHTML = "the sum is :" + result; 
+  },5000);
+
+});
+
+
+
+ </script>
+</body>
+</html>
