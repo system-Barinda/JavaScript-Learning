@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document barinda styem</title>
+</head>
+<body>
+    <center>
+        <h1> my name is barinda system sylvere
+        </h1> <hr> <br>
+
+        <input type="text" id="task" placeholder="type here task !.....">
+        <button onclick="addTask()">add</button>
+        <ul id="list"></ul>
+    </center>
+    <script>
+        function addTask(){
+          let task = document.getElementById("task");
+          let taskText = task.value.trim();
+          if( ! taskText) return;
+          
+          // let create a list to store what we do have right now
+          let li = window.document.createElement('li');
+          let span = window.document.createElement('span');
+          span.textContent = taskText;
+
+
+          // let we create  button to edit;
+          let btnEdit = window.document.createElement('button');
+               btnEdit.textContent = "edit";
+               btnEdit.onclick = () => editTask(span);
+
+
+           // let we create button to delete
+           let btnDelete = window.document.createElement('button');
+              btnDelete.textContent = "delete";
+              btnDelete.onclick = () => li.remove();
+              
+              li.append(span);
+              li.append(btnEdit);
+              li.append(btnDelete);
+
+        window.document.getElementById("list").append(li);
+        
+        function editTask(span){
+            const newTask = prompt('edit your task here !',span.textContent);
+            if(newTask !== null && newTask.trim() !== ""){
+                span.textContent = newTask;
+            }
+
+        }
+        }
+    </script>
+</body>
+</html>

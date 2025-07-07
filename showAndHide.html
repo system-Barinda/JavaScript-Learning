@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barinda Password</title>
+</head>
+<body>
+    <center><h1>Barinda Developing Password Show and Hide</h1></center>
+    <hr>
+
+    <center>
+        <label for="password">Password</label>
+        <input type="password"  id="password" class="password-field"><br>
+        <button type="button" onclick="showPassword(event)">Show</button>
+    </center>
+
+    <script>
+        function showPassword(event) {
+            let passwordField = document.getElementById("password");
+            let button = event.target;
+            
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                button.textContent = "Hide";
+            } else {
+                passwordField.type = "password";
+                button.textContent = "Show";
+            }
+        }
+    </script>
+</body>
+</html>

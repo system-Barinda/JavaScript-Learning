@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document.write()</title>
+</head>
+<body>
+      <!-- <script>
+        window.document.writeln("<h1> barinda system sylvere </h1>");
+        window.document.write("barinda");
+      </script> -->
+
+      <div id="barinda">
+
+      </div>
+      <script>
+        let barinda = window.document.getElementById("barinda");
+        let h1 = window.document.createElement("h1");
+        h1.textContent = "my name is barinda system";
+        barinda.append(h1) 
+      </script>
+</body>
+</html>
