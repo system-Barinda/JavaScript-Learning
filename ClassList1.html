@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> barinda</title>
+    <style>
+        body{
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+        .grandparent{
+          background: red;
+          height: 300px;
+          width: 300px; 
+          justify-content: center;
+          text-align: center;
+          align-items: center; 
+
+        }
+        .parent{
+            background: blue;
+            height: 200px;
+            width: 200px;
+            margin: 10px;
+            padding: 10px;
+            position: absolute;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+        }
+        .child{
+            height: 100px;
+            width: 100px;
+            background: green;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+      <div class="grandparent">
+        <div class="parent">
+            <div class="child">
+
+            </div>
+        </div>
+      </div>
+      <script>
+        const grandparent = document.querySelector(".grandparent");
+        const parent = document.querySelector(".parent");
+        const child = document.querySelector(".child");
+
+         grandparent.addEventListener('click', e => {
+            console.log("this  grandparent 1");
+         })
+         
+        parent.addEventListener('click',() => {
+            console.log('iradukunda');
+        });
+        setTimeout(() => {
+        parent.removeEventListener('click',() => {
+            console.log('iradukunda');
+        });
+        },5000);
+
+
+         child.addEventListener('click', e => {
+            console.log("this  child 1");
+            
+         })
+         function printHi(){
+            console.log('my name is barinda sytem sylvee');
+         }
+      </script>
+</body>
+</html>
