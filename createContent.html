@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document barinda system</title>
+  <style>
+    #playGround {
+      height: 100px;
+      width: 400px;
+      background: brown;
+      color: white;
+      padding: 10px;
+    }
+
+    p {
+      background: gray;
+    }
+
+    .barinda {
+      color: green;
+      height: 50px;
+      width: 50px;
+      background: blueviolet;
+      transition: all 5s;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div id="playGround">
+    my name is barinda
+  </div>
+
+  <script>
+    const playGround = document.getElementById("playGround");
+    const div = document.createElement('div');
+    div.textContent = "tumba";
+    div.setAttribute('class', 'barinda');
+    playGround.append(div);
+
+    setInterval(() => {
+      const angle = Math.random() * 360;
+      const hue = Math.random() * 360;
+
+      div.style.transform = `rotate(${angle}deg)`;
+      div.style.backgroundColor = `hsl(${hue}, 100%, 50%)`;
+    }, 2000);
+  </script>
+</body>
+</html>
