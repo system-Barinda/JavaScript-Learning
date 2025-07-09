@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>barinda system sylvere</title>
+    <style>
+        body{
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        }
+        h1{
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            font-size: 25px;
+            font-weight: bold;
+            color: green;
+        }
+        button{
+            cursor: pointer;
+            height: 50px;
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1> make answers correct well</h1> <hr> <br>
+     <button>next</button>
+  <br>
+    <script>
+      
+
+function nextButton(){
+  let question = [
+            "what is your names ?",
+            "what is your age ?",
+            "what is your location ?",
+            "what is your house ?",
+            "what is your car names ?",
+            "what is your your wife ?",
+            "what is your family ?",
+            "what is your career ?",
+        ];
+        for(let i = 0; i < question.length;i++){
+           document.append(question[i]);
+        }
+}
+ let button = document.querySelector('button');
+ button.addEventListener('click',nextButton);
+        
+    </script>
+</body>
+</html>

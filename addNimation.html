@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document barinda </title>
+</head>
+<body>
+       <div id="box">the  paragraph........</div>
+
+       <script>
+        let count =  1;
+
+        function generateParagraph(){
+            let fragment = document.createDocumentFragment();
+            for(let i = 0; i < 50; i++){
+             let p = document.createElement('p');
+             p.textContent = 'the paragraph ' + count;
+             count++;
+             fragment.append(p);   
+            }
+             document.body.append(fragment); 
+            if( count < 100){
+             setTimeout(generateParagraph,0);
+             }
+             else{
+                const done = document.createElement('p');
+                done.textContent = "the congolation "+ (count - 1 )  +  " paragaraph";
+                document.body.append(done);
+             }
+            
+
+
+        }
+        generateParagraph();
+       </script>
+</body>
+</html>
