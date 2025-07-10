@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> ask many question </title>
+    <style>
+        body{
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        }
+        button{
+            height: 50px;
+            width: 100px;
+            border: none;
+            cursor: pointer;
+            background: darkcyan;
+            color: white;
+            align-items: center;
+            justify-content: center;
+            line-height: 50px;
+        }
+        #desplay{
+            height: 300px;
+            width: 80%;
+            padding: 3px;
+            margin: 10px;
+            color: black;
+            box-shadow:  0px 4px 12px rgba(0,0,1,1);
+            justify-content: center;
+            text-align: center;
+            border-radius: 10px;
+            border: none;
+            margin-top: 10px;
+            margin-left: 100px;
+
+        }
+        .unswer{
+            height: 50px;
+            width: 400px;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            outline: none;
+            color: black;
+            font-size: 20px;
+            border: none;
+            border-radius: 10px;
+            border: 0.5px solid green;
+            margin-top: 50px;
+        }
+        .ann{
+             height: 50px;
+            width: 150px;
+            border: none;
+            cursor: pointer;
+            background: darkcyan;
+            color: white;
+            align-items: center;
+            justify-content: center;
+            line-height: 50px;
+            margin-top: 70px; 
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+         <h1> all the question you want are here</h1> <hr> <br>
+         <button> next question</button>
+
+    <div id="desplay">
+
+    </div>
+    <script>
+    
+    let question = [
+        "What is JavaScript?",
+        "What is the DOM?",
+        "What is the difference between let and var?",
+        "What is an event listener?",
+        "What is a callback function?"
+    ];
+    
+    let unswers = [
+        "is a high-level, dynamic, and multi-paradigm programming language that is a cornerstone of web development.",
+        "Interactive web pages: Dropdown menus, animations, form validation, image sliders,",
+        "Responding to user actions: Detecting clicks, keyboard inputs, and other user",
+        "Manipulating the DOM (Document Object Model): JavaScript can dynamically "
+    ];
+
+    let countCurrent = 0;
+    function nextQuestion(){
+          if( countCurrent <= question.length){
+            document.getElementById('desplay').innerHTML = question[countCurrent];
+            let input = document.createElement('input');
+            let br = document.createElement('br');
+            let btnUnswers = document.createElement('button');
+                        input.setAttribute('placeholder','enter the unswer');
+                        input.setAttribute('type','text');
+                        input.setAttribute('class','unswer');
+                        btnUnswers.textContent = 'check answers';
+                        
+                        btnUnswers.setAttribute('class','ann')
+                        document.getElementById("desplay").append(br);
+                        document.getElementById("desplay").append(br);
+                        document.getElementById("desplay").append(input);
+                        document.getElementById("desplay").append(br);
+                        document.getElementById("desplay").append(btnUnswers);
+                        countCurrent++;
+
+
+
+
+
+    //      function barinda(){
+    //     let inputText = document.querySelector('.unswer');
+    //     for(let i = 0; i < question.length; i++){
+    //         if(question[i] === inputText){
+    //             alert('greate');
+    //         }
+    //         else{
+    //             alert('fails');
+    //         }
+    //     }
+    // }
+     }
+     else{
+        document.getElementById('desplay').innerHTML = question[countCurrent];
+     }
+    }
+    let button = document.querySelector('button');
+    button.addEventListener('click',nextQuestion);
+    
+    
+
+    </script>
+</body>
+</html>
