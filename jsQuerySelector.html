@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>method of querySelector</title>
+
+</head>
+<body>
+   <center><h1>barinda system sylvere</h1></center> <br>
+   <div class="box"> box 1</div> 
+   <div class="box"> box 2</div> 
+   <div class="box"> box 3</div> 
+   <div class="box"> box 4</div> 
+   <div class="box"> box 5</div> 
+
+   <script>
+    // let firstBox = window.document.querySelector(".box");
+    // firstBox.style.backgroundColor = "yellow";
+
+    let allBoxs = window.document.querySelectorAll(".box");
+    allBoxs.forEach(box => {
+        box.style.border = "1px solid blue";
+    });
+   </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document.getElementClass</title>
+</head>
+<body>
+    <!-- <div class="box">box 1</div>
+    <div class="box">box 2</div>
+    <div class="box">box 3</div>
+    <div class="box">box 4</div>
+    <div class="box">box 5</div>
+
+    <script>
+        const boxes = window.document.getElementsByClassName("box");
+        for(let i = 0; i < boxes.length; i++){
+            boxes[i].style.background = "blue";
+            
+        }
+       
+    </script> -->
+
+
+    <div class="box">barinda</div>
+    <div class="box">gambira</div>
+    <div class="box">iradukunda</div>
+    <div class="box">niyokwizwa</div>
+    <div class="box">ishimwe</div>
+
+    <script>
+        const boxArray = Array.from(window.document.getElementsByClassName("box"));
+        boxArray.forEach(box => {
+          box.textContent = "the contents are updated"
+        });
+    </script>
+</body>
+</html>

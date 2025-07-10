@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Table Generator</title>
+  <style>
+    button {
+      font-size: 30px;
+      height: 100px;
+      width: 100px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <button type="button">Table</button>
+
+  <script>
+    function generateTable() {
+      let table = document.createElement('table');
+      let tableBody = document.createElement('tbody');
+
+      for (let i = 0; i < 5; i++) {
+        let row = document.createElement('tr');
+        for (let j = 0; j < 5; j++) {
+          let column = document.createElement('td');
+          let columnText = document.createTextNode(`Cell in row ${i + 1}, column ${j + 1}`);
+          column.appendChild(columnText);
+          row.appendChild(column);
+        }
+        tableBody.appendChild(row);
+      }
+
+      table.appendChild(tableBody);
+      table.setAttribute("border", "1");
+      document.body.appendChild(table);
+    }
+
+    document.querySelector("button").addEventListener('click', generateTable);
+  </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>system cards</title>
+    <style>
+      .container-card{
+    
+        margin-top: 40px;
+        width: 50%;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+        margin: auto;
+        position: relative;
+        border-radius: 10px;
+
+
+
+      }
+      .slider-card{
+       display: flex;
+       overflow-x: hidden;
+       scroll-behavior: smooth;
+       gap: 10px;
+       background: lightblue;
+       margin-top: 10px;
+       margin-bottom: 10px;
+       padding: 10px;
+       border-radius: 10px;
+
+      }
+      .card{
+        flex: 0 0 auto;
+        line-height: 120px;
+        width: 200px;
+        height: 120px;
+        background:white;
+        color: black;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        margin-top: 10px;
+        padding: 10px;
+        font-weight: bold;
+        text-align: center;
+
+      }
+      .slider-btn{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #333;
+        color: white;
+        font-size: 24px;
+        padding: 10px;
+        z-index: 1;
+        cursor: pointer;
+        border: none;
+      }
+      .slider-btn.left{
+        left: 0;
+      }
+      .slider-btn.right{
+        right: 0;
+      }
+
+
+    </style>
+</head>
+<body>
+  <center>
+    <h1>barinda system cards design</h1>
+    <div class="container-card">
+        <button class="slider-btn left" onclick="slideLeft()">&#10094</button>
+        <div class="slider-card" id="slider">
+            <div class="card">card 1</div>
+            <div class="card">card 2</div>
+            <div class="card">card 3</div>
+            <div class="card">card 4</div>
+            <div class="card">card 5</div>
+            <div class="card">card 6</div>
+        </div>
+        <button class="slider-btn right" onclick="slideRight()">&#10095</button>
+    </div>
+  </center>  
+  <script>
+    function slideLeft(){
+      document.getElementById("slider").scrollBy({
+       left:-220,
+       behavior:"smooth"
+      });
+    }
+    function slideRight(){
+      document.getElementById("slider").scrollBy({
+       left:220,
+       behavior:"smooth"
+      });
+    }
+  </script>
+</body>
+</html>

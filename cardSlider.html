@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider of left and right</title>
+    <style>
+        body{
+            /* background: brown; */
+            color: black;
+            font-size: 30px;
+
+        }
+        .container-slider{
+            position: relative;
+            width: 50%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .card-slider{
+            display: flex;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            gap: 16px;
+            padding: 10px;
+            background-color: aquamarine;
+        }
+        .card{
+        flex: 0 0 auto;
+        width: 200px;
+        height: 120px;
+        background: #f4f4f4;
+        border-radius: 8px;
+        text-align: center;
+        line-height: 120px;
+        font-weight: bold;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .slide-btn {
+         position: absolute;
+         top: 50%;
+         transform: translateY(-50%);
+         background: #333;
+         color: white;
+         border: none;
+         font-size: 24px;
+         padding: 10px;
+         cursor: pointer;
+         z-index: 1;   
+        }
+        .slide-btn.left{
+            left: 0;
+        }
+        .slide-btn.right{
+            right: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container-slider">
+        <button class="slide-btn left" onclick="slideLeft()">&#10094;</button>
+
+        <div class="card-slider" id="slider">
+            <div class="card"> card 1</div>
+            <div class="card"> card 2</div>
+            <div class="card"> card 3</div>
+            <div class="card"> card 4</div>
+            <div class="card"> card 5</div>
+            <div class="card"> card 6</div>
+        </div>
+        <button class="slide-btn right" onclick="slideRight()">&#10095;</button>
+    </div>
+    <script>
+     function slideLeft(){
+        document.getElementById("slider").scrollBy({
+            left: -220, // width  of card + gap
+            behavior:"smooth"
+        });
+     }   
+     function slideRight(){
+        document.getElementById("slider").scrollBy({
+            left:200,
+            behavior:"smooth"
+        });
+     }
+    </script>
+</body>
+</html>

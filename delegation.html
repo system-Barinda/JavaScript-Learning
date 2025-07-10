@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> barinda system sylvere</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+        }
+        .grand{
+            height: 300px;
+            width: 300px;
+            justify-content: center;
+            margin: auto;
+            text-align: center;
+            align-items: center;
+            background: gray;
+        }
+        .parent{
+            height: 200px;
+            width: 200px;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            background: green;
+            margin: 10px;
+        }
+        .child{
+            height: 100px;
+            width: 100px;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            background: red;
+            margin: 10px;
+            position: absolute;
+            top: 10px;
+        }
+    </style>
+</head>
+<body>
+      <div class="grand">
+        <div class="parent">
+            <div class="child"></div>
+        </div>
+      </div>
+      <script>
+        const divs = document.querySelectorAll('div');
+         addGlobalEvent("click","div",e => {
+            console.log('my name is Gambira');
+         });
+
+    function addGlobalEvent(type,selector,callback){
+        document.addEventListener(type,e => {
+            if(e.target.matches(selector)) callback(e);
+        })
+    }
+
+
+
+
+        let newDiv = document.createElement('div');
+           newDiv.innerHTML = "barinda system sylvere";
+           newDiv.style.cssText = "background:blue;height:300px;width:300px;";
+           document.querySelector('body').append(newDiv);
+      </script>
+</body>
+</html>
