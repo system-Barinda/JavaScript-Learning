@@ -13,3 +13,15 @@ console.log(alphabetPosition('barinda'));
 //     letterNumber[String.fromCharCode(i)] = i - 64;
 //     console.log(letterNumber);
 // }
+
+// let characters = "abcdefghijklmnopqrstuvwxyz".split("")
+// let text = "valens@".split("")
+// text.forEach(elem=>{
+//   let index = characters.filter((a,b)=>{
+//     if(a==elem){
+//       // console.log(b)
+//       return b
+//     }
+//   })
+//   console.log(index)
+// })
