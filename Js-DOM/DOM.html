@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop Card</title>
+  <style>
+    body {
+      background: darkgray;
+      font-family: sans-serif;
+      margin: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .container {
+      height: 400px;
+      width: 70%;
+      background: white;
+      color: black;
+      border: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-top: 100px;
+      position: relative;
+    }
+
+    .display-content {
+      height: 400px;
+      width: 30%;
+      background: white;
+      color: black;
+      border: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-top: 100px;
+    }
+
+    .menu {
+      height: 50px;
+      width: 90%;
+      font-size: 20px;
+      margin: auto;
+      margin-top: 5px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .menu:hover {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      border-top: 1.5px solid rgb(231, 9, 150);
+    }
+
+    .home-container {
+      height: 100px;
+      border: none;
+      background: grey;
+      color: black;
+      font-size: 20px;
+      display: none; /* hidden by default */
+      gap: 10px;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .sub-home {
+      margin: auto 10px;
+      cursor: pointer;
+    }
+
+    .sub-home:hover {
+      text-decoration: underline green;
+      transition: 0.3s;
+    }
+    .Service-container{
+        height: 100px;
+      border: none;
+      background: green;
+      color: black;
+      font-size: 20px;
+      display: none;
+      gap: 10px;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      /* display: flex; */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="home-container">
+      <div class="sub-home">Games</div>
+      <div class="sub-home">Songs</div>
+      <div class="sub-home">Movies</div>
+    </div>
+
+    <div class="Service-container">
+      <div class="sub-home">Games</div>
+      <div class="sub-home">Songs</div>
+      <div class="sub-home">Movies</div>
+    </div>
+  </div>
+
+  <div class="display-content">
+    <div class="menu home">Home</div>
+    <div class="menu Service">Service</div>
+    <div class="menu">Contact</div>
+    <div class="menu">About</div>
+    <div class="menu">Setting</div>
+    <div class="menu">Profile</div>
+    <div class="menu">Logout</div>
+  </div>
+
+  <script>
+    const menuHome = document.querySelector(".home");
+    const menuService = document.querySelector(".Service");
+    const homeContainer = document.querySelector(".home-container");
+    const ServiceContainer = document.querySelector(".Service-container");
+
+    menuHome.addEventListener("click", () => {
+      const currentDisplay = getComputedStyle(homeContainer).display;
+      homeContainer.style.display = currentDisplay === "none" ? "flex" : "none";
+    });
+    menuService.addEventListener('click', () => {
+    const currentDisplay = getComputedStyle(ServiceContainer).display;
+    ServiceContainer.style.display = currentDisplay === "none" ? "flex" : "none";
+
+    });
+  </script>
+</body>
+</html>
