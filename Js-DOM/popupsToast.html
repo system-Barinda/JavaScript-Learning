@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document barinda popups toasts</title>
+    <style>
+  .toast {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: #444;
+  color: #fff;
+  text-align: center;
+  padding: 16px;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+.toast.show {
+  visibility: visible;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+  from { opacity: 0; bottom: 0; }
+  to { opacity: 1; bottom: 30px; }
+}
+@keyframes fadeout {
+  from { opacity: 1; bottom: 30px; }
+  to { opacity: 0; bottom: 0; }
+}
+
+    </style>
+</head>
+<body>
+  <div id="toast" class="toast">Page loaded successfully!</div>
+  
+  <script>
+    window.onload = function() {
+  const toast = document.getElementById("toast");
+  toast.classList.add("show");
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 3000);
+};
+
+  </script>
+</body>
+</html>

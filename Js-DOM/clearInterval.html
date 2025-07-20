@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <div class="text"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem vel
+         impedit nemo officiis recusandae, animi, sint praesentium corporis ab
+         nesciunt enim officia. Iusto autem commodi reprehenderit quos quo! In, illum!</div> 
+         <br>
+         <button class="start">start</button>
+         <button class="stop">stop</button>
+         <script>
+            let intervalId;
+             let text = document.querySelector('.text');
+            let start = document.querySelector('.start');
+            let stop = document.querySelector('.stop');
+
+            function toggleColor(){
+           
+             text.style.color = text.style.color == 'red' ? 'blue':'red';   
+            }
+            start.addEventListener('click',()=> {
+             intervalId = setInterval(toggleColor,2000);
+            });
+            stop.addEventListener('click',() => {
+                clearInterval(intervalId);
+            })
+         </script>
+</body>
+</html>

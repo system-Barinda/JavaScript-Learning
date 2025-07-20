@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <button onclick="redirectToGitHub()">Go to GitHub</button>
+    <button onclick="back()">back</button>
+    <script>
+      const urlParams = new URLSearchParams('?type=list&page=20');
+
+for (const key of urlParams.keys()) {
+    console.log(key);
+}
+
+    </script>
+  </body>
+</html>

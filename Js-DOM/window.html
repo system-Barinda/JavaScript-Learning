@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document barinda system sylvere</title>
+</head>
+<body>
+     <div class="fleshText">my name is Barinda system sylvere</div>
+     <button class="start">start</button>
+     <button class="stop">stop</button>
+     <script>
+        let interveId;
+        let start = document.querySelector('.start');
+        let stop = document.querySelector('.stop');
+        function toggleColor(){
+            let e = document.querySelector('.fleshText');
+            e.style.color = e.style.color == 'red' ? 'blue':'red';
+        }
+        start.addEventListener('click', () =>{
+             interveId = setInterval(toggleColor,1000);
+        })
+        stop.addEventListener('click',() => {
+            clearInterval(interveId);
+        })
+
+     </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document barind popups</title>
+    <style>
+    .toast{
+        visibility: hidden;
+        min-width: 200px;
+        margin:  0 auto;
+        background: #333;
+        text-align: center;
+        padding: 16px;
+        position: fixed;
+        bottom: 30px;
+        left: 0;
+        right: 0;
+        border: none;
+        z-index: 1000;
+        color: white;
+    }
+.toast.show
+{
+    visibility: visible;
+    animation: fadin 0.5s,fadeout 0.5s 2.5s;
+}
+@keyframes fadin {
+  from { bottom: 0; opacity: 0;}
+  to { bottom: 30px; opacity: 1;}
+}
+@keyframes fadeout {
+    from { bottom: 30px; opacity: 1;}
+    to { bottom: 0; opacity: 0;}
+}
+    </style>
+</head>
+<body>
+    <div id="toast" class="toast"> my name is barinda system sylvere</div>
+   <button onclick="showToast()">show the popups customized</button> 
+   <script>
+    function showToast(){
+        let toast = document.getElementById('toast');
+        toast.className = "toast show";
+        setTimeout(() => {
+            toast.className = toast.className.replace("show", "");
+        },3000);
+    }
+   </script>
+</body>
+</html>

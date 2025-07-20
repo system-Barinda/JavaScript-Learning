@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document barinda system</title>
+    <style>
+        input{
+            height: 50px;
+            width: 600px;
+            outline: none;
+            font-size: 20px;
+        }
+        button{
+            width: 200px;
+            margin: 10px;
+            height: 50px;
+            border: none;
+            background: gray;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+       <center> html document</center> <br>
+       <input type="text" id="urllll" placeholder="type your url do you have right now"> <br>
+       <button> visit your link</button>
+       <script>
+  let url = document.querySelector('#urllll');
+   let button = document.querySelector('button');
+   button.addEventListener('click',() => {
+    location.href = `${url}`;
+   });
+       </script>
+       
+</body>
+</html>
