@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document after</title>
+</head>
+<body>
+    <div id="item">This is the original element</div>
+    <button>add</button>
+
+    <script>
+        const item = document.getElementById('item');
+        let butt = document.querySelector('button');
+        
+        butt.addEventListener('click',() => {
+            
+        
+           let newItem = document.createElement('p');
+        newItem.textContent = 'this is inserted afert the div';
+        item.append(newItem) 
+        item.append("barinda system sylvere") 
+       
+    
+      
+        });
+          
+       
+    </script>
+</body>
+</html>

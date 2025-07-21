@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document traversal document</title>
+</head>
+<body>
+    <div id="parent">
+        <h2>title</h2>
+        <div class="text">paragraph 1</div>
+        <div class="barinda">paragraph 2</div>
+    </div>
+    <script>
+    //     let textt = document.getElementById("parent");
+    //     let firstCh = document.querySelector('.text');
+
+    //    let container = textt.closest('#parent');
+    //    console.log(container);
+
+    let firstP = document.querySelector('#parent');
+    let che = firstP.children;
+   
+     let b = che.forEach(element => {
+       return element;
+     });
+     console.log(b);
+
+    </script>
+</body>
+</html>
