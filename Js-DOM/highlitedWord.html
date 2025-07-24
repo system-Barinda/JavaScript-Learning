@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document barinda words hilited</title>
+    <style>
+       .system{
+        color: red;
+       } 
+    </style>
+</head>
+<body>
+        <p id ="text">
+         Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Impedit eos dolorum corporis esse, voluptatum atque assumenda 
+          soluta aliquid porro eum ducimus est
+          commodi vitae minus, dicta itaque. Tempora, iste vero.
+        </p> 
+        <script>
+         let text = document.getElementById('text');
+         let changedText = text.innerText.split(/\b/);
+         
+         let highlited = changedText.map(word => {
+              let cleanWord = word.replace(/[^\w]/g,"");
+              if( cleanWord.length > 6){
+                return ` <span class = 'system'>${word}</span>`
+              }
+              return word;
+         }).join(' ');
+         text.innerHTML = highlited;
+        </script>
+</body>
+</html>

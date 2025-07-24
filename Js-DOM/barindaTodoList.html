@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document barinda todo list</title>
+</head>
+<body>
+         <h1>barinda system sylvere</h1><hr>
+
+         <input type="text" id="text" placeholder="type ">
+         <button id="addButton">add</button>
+         <ul id="list"></ul>
+
+         <script>
+            let addButton = document.getElementById('addButton');
+            let list = document.getElementById("list");
+           
+         addButton.addEventListener('click',()=> {
+               let text = document.getElementById("text");
+               let textChanged = text.value.trim();
+               if( ! textChanged) return;
+               let span = document.createElement('span');
+               span.textContent = textChanged;
+               let li = document.createElement('li');
+               
+
+               let edit = document.createElement('button');
+               edit.textContent = 'edit';
+               edit.onclick = () => editText(span);
+
+               let deleteButton = document.createElement('button');
+               deleteButton.textContent = 'delete';
+               deleteButton.onclick = () => li.remove();
+               li.append(span);
+               li.append(deleteButton); 
+               li.append(edit);
+               list.append(li)
+
+               function editText(span){
+                let newEdit = prompt(" please enter your wish",span.textContent);
+                if( newEdit !== null && newEdit.trim() !== ""){
+                    span.textContent = newEdit;
+                }
+               }
+              
+         });
+          
+         </script>
+</body>
+</html>

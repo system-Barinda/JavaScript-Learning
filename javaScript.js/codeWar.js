@@ -8,5 +8,5 @@ function betterThanAverage(classPoints, yourPoints) {
     
     return yourPoints > average;
   }
-  console.log(betterThanAverage([90, 95, 100], 85));
+  console.log(betterThanAverage([90, 95, 100], 105));
   
