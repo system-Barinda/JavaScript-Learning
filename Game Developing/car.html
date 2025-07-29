@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>game development</title>
+    <style>
+        body{
+            margin: 0;
+            overflow: hidden;
+            font-family: sans-serif;
+            background: #444;
+            display: flex;
+            justify-content: center;
+            align-items: center;height: 100vh;
+        }
+        .game{
+            position: relative;
+        }
+        .road{
+            width: 300px;
+            height: 500px;
+            background:#333;
+            overflow: hidden;
+            position: relative;
+            /* border: 3px solid #fff; */
+            box-shadow: 0px 4px 6px rgba(0,0,0,1.1);
+        }
+        .car{
+            width: 50px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            bottom: 20px;
+            left: 125px;
+            transition: left 0.1s;
+
+        }
+        .obstacle{
+            width: 50px;
+            height: 100px;
+            background: yellow;
+            position: absolute;
+            top: 0;
+        }
+        #line {
+            width: 10px;
+            height: 100px;
+            background: white;
+            position: absolute;
+            left: 154px;
+            opacity: 0.3;
+        }
+        #startBtn {
+            margin-top: 10px;
+            text-align: center;
+            padding: 10px 20px;
+            background: #1be93d;
+            color:white;
+            font-weight: bold;
+            cursor: pointer;
+            user-select: none;
+}
+    </style>
+</head>
+<body>
+    <div class="game">
+        <div class="road">
+            <div class="car"></div>
+        </div>
+        <div id="startBtn">start game</div>
+    
+    </div>
+    <script>
+        const road = document.querySelector('.road');
+        const car = document.querySelector('.car');
+        const startBtn = document.getElementById('startBtn');
+
+
+
+        let gameInterval;
+        let lines = [];
+        let obstacles = [];
+        let carX =  125;
+        let speed = 5;
+
+
+        function createLine(y){
+          let line = document.createElement('div');
+          line.className = 'line';
+          line.style.top = y + 'px';
+          line.style.left = '145px';
+          line.style.width = '10px';
+          line.style.height = '100px';
+          line.style.background = 'white';
+          line.style.position = 'absolute';
+          line.style.opacity = '0.3';
+          road.appendChild(line);
+          return line;
+          
+
+        }
+
+
+        function createObstacle(){
+            const obs = document.createElement('div');
+            obs.className = 'obstacle';
+            obs.style.left = Math.floor(Math.random() * 5) * 60 + 'px';
+            obs.style.top = '-100px';
+            road.appendChild(obs);
+            return obs;
+        }
+
+
+        function moveLines(){
+            lines.forEach(line => {
+                let y = parseInt(line.style.top);
+                y += speed;
+                if(y > 500) y = -100;
+                line.style.top = y + 'px';
+
+            });
+        }
+
+        function moveObstacles(){
+            obstacles.forEach((obs,index) => {
+             let y = parseInt(obs.style.top);
+             y += speed;
+             if(y > 500){
+                obs.remove();
+                obstacles.splice(index,1);
+             }
+             else{
+                obs.style.top = y + 'px';
+                checkCollision(obs);
+             }
+            });
+        }
+
+
+        function checkCollision(obs){
+            const obsRect = obs.getBoundingClientRect();
+            const carRect = car.getBoundingClientRect();
+
+            if(
+                obsRect.left < carRect.right &&
+                obsRect.right > carRect.left &&
+                obsRect.top < carRect.bottom &&
+                obsRect.bottom > carRect.top
+            ){
+                endGame();
+            }
+        }
+
+        function gameLoop(){
+            moveLines();
+            moveObstacles();
+
+            if(Math.random() < 0.02){
+                obstacles.push(createObstacle());
+            }
+        }
+
+        function startGame(){
+            road.innerHTML = '';
+            road.appendChild(car);
+            lines = [createLine(0),createLine(150),createLine(300)];
+            obstacles = [];
+            
+            gameInterval = setInterval(gameLoop,30);
+        }
+
+
+        function endGame(){
+            clearInterval(gameInterval);
+            alert('Game over!');
+        }
+        document.addEventListener('keydown', e => {
+            if(e.key === 'ArrowLeft'){
+                carX -= 60;
+                if(carX < 0) carX = 0;
+                car.style.left = carX + 'px';
+            }
+            else if(e.key === 'ArrowRight'){
+                carX += 60;
+                if(carX > 250) carX = 250;
+                car.style.left = carX + 'px';
+            }
+        });
+        startBtn.addEventListener('click',startGame)
+    </script>
+</body>
+</html>
