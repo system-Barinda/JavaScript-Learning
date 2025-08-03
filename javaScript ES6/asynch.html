@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> welcome to website</title>
+    <style>
+        body{
+            background: gray;
+            text-align: center;
+            align-items: center;
+            color: black;
+        }
+        table{
+            margin: 10px;
+            margin-left: 300px;
+            padding: 10px;
+            border: 1px solid black;
+            width: 60%;
+
+        }
+        table tr th{
+            height: 50px;
+            background: green;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        table tr{
+            border: 0.5px solid black;
+
+        }
+        table td{
+           border: 0.5px solid black;
+           height: 30px; 
+        }
+    </style>
+</head>
+<body>
+    <h1>welcome to my website called Barinda system sylvere</h1>
+
+    <table id="userTable">
+     <thead>
+        <tr>
+            <th>user id</th>
+            <th>usernames</th>
+            <th>email</th>
+            
+        </tr>
+     </thead>
+     <tbody>
+
+     </tbody>
+    </table>
+    <script>
+        
+     async function getAll(){
+         let data = "https://jsonplaceholder.typicode.com/users";
+         try{
+            const response = await fetch(data);
+            if(! response.ok){
+                throw new Error('the url is not valid true');
+            }
+            else 
+            {
+                const result = await response.json();
+                const usetTable = document.querySelector('#userTable tbody')
+               
+                 result.forEach(element => {
+                     const tr = document.createElement('tr');
+                      setTimeout(() => {
+                          tr.innerHTML = `
+                              <td>${element.id}</td>
+                              <td>${element.username}</td>
+                              <td>${element.email}</td>
+                          `;
+                            usetTable.append(tr);
+                      },2000);
+                 });
+               
+            }
+         }
+         catch(err){
+            console.error('error found:',err.message);
+         }
+
+        }
+        window.onload = getAll;
+    </script>
+</body>
+</html>
