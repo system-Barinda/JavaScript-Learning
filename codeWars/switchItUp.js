@@ -1,5 +1,5 @@
 function switchItUp(number){
-let arrNumber = ['Zero',')ne','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten'];
+let arrNumber = ['Zero','One','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten'];
 return arrNumber[number];
 }
-console.log(switchItUp(1))
+console.log(switchItUp(0))
