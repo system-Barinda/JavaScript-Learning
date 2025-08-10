@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Error Display Example</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .error { color: red; margin-top: 10px; }
+        .success { color: green; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Get Users</h1>
+    <form id="userForm">
+        <button type="submit">Fetch Users</button>
+    </form>
+    <div id="message"></div>
+
+    <script>
+        document.getElementById("userForm").addEventListener("submit", async function (e) {
+            e.preventDefault();
+
+            const messageDiv = document.getElementById("message");
+            messageDiv.textContent = "Loading...";
+
+            try {
+                const response = await fetch("http://localhost:3000/users");
+                const result = await response.json();
+
+                if (!result.success) {
+                    messageDiv.textContent = result.error;
+                    messageDiv.className = "error";
+                } else {
+                    messageDiv.textContent = "Users fetched successfully!";
+                    messageDiv.className = "success";
+                    console.log(result.data); // Display in console for now
+                }
+            } catch (error) {
+                messageDiv.textContent = "Network error: " + error.message;
+                messageDiv.className = "error";
+            }
+        });
+    </script>
+</body>
+</html>
