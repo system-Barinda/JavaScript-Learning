@@ -9,31 +9,39 @@
             border: 1px solid black;
             display: flex;
             gap: 10px;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items:center;
-            align-content: center;
             min-height: 400px;
-            gap: 10px;
+            align-items: flex-start;  
             
-            
+        }
+        #box-1{
+         
+         
         }
         .box{
             height: 80px;
-            width: 100px;
+            width: 150px;
             background-color: blue;
             color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            
+            
+        }
+        @media(max-width:560px){
+        body{
+        flex-wrap: wrap;
+        }
         }
     </style>
 </head>
 <body>
-    <div class="box">1</div>
+    <div id="box-1" class="box">1</div>
     <div class="box">2</div>
     <div class="box">3</div>
     <div class="box">4</div>
     <div class="box">5</div>
-    <div class="box">6</div>
-    <div class="box">7</div>
-    <div class="box">9</div>
+   
 </body>
 </html>
