@@ -6,4 +6,5 @@ for( let key of bar){
   console.log(word);
 }
 
-
+// let b = new Array();
+// console.log(typeof b)

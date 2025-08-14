@@ -15,4 +15,4 @@ function duplicateCount(text) {
 
     return duplicates;
 }
-console.log(duplicateCount('bbariindaa'))
+console.log(duplicateCount('bariindaa'))
