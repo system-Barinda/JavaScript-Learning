@@ -1,11 +1,10 @@
-function duplicateCount(text){
+function countDiplicated(text){
     let count = {};
     let deplicated = {};
 
     for(let letter of text){
-        count[letter] = (count[letter] || 0) + 1 ;
+        count[letter] = (count[letter] || 0) + 1;
     }
-    
     for(let letter in count){
         if(count[letter] > 1){
             deplicated[letter] = count[letter];
@@ -13,4 +12,5 @@ function duplicateCount(text){
     }
     return deplicated;
 }
-console.log(duplicateCount("bariindaa"));
+let tex = "bbarrinddda";
+console.log(countDiplicated(tex))
