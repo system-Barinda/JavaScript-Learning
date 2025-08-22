@@ -82,3 +82,4 @@ const reading1 = new WeatherReading(2, "kigali", 25, 60, 1013, 15);
 nyc.addReading(reading);
 nyc.addReading(reading1);
 console.log(nyc.readings); // Expected: 1
+    
