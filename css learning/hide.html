@@ -4,15 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> show and hide</title>
+    <style>
+        .container{
+            margin-top: 200px;
+            margin: 0 auto;
+            width: min(500px, 100%);
+            padding: 1.5em;
+            background-color: #2a2f3d;
+            color: white;
+            cursor: pointer;
+            transition: 150ms ease;
+            height: 1.5em;
+            overflow: hidden;
+        }
+        .open{
+            height:400px;
+        }
+        p{
+            margin-top: 2.5em;
+        }
+    </style>
 </head>
 <body>
-    <details>
+    <!-- <details>
         <summary>click to expand</summary>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
             Assumenda eius fugiat temporibus amet, earum consectetur repellat esse quam nihil voluptate illum quas quae 
             est, explicabo rerum nemo voluptatum eum. Nobis.
         
         </p>
-    </details>
+    </details> -->
+
+    <div class="container">
+        <div class="summary"> hello world</div>
+        <div class="hidden">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                 Quaerat excepturi sint rem corrupti iste dolores ipsum sit ea odit
+                 quam veritatis fuga autem, adipisci doloribus in eligendi vero nobis accusantium?
+                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Asperiores harum nam quae quibusdam error, temporibus perferendis maiores consequatur 
+                  quidem ea, sequi omnis odio quaerat 
+                 exercitationem accusamus? Atque amet accusamus assumenda.
+                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                 Quaerat excepturi sint rem corrupti iste dolores ipsum sit ea odit
+                 quam veritatis fuga autem, adipisci doloribus in eligendi vero nobis accusantium?
+                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Asperiores harum nam quae quibusdam error, temporibus perferendis maiores consequatur 
+                  quidem ea, sequi omnis odio quaerat 
+                 exercitationem accusamus? Atque amet accusamus assumenda.
+            </p>
+        </div>
+    </div>
+    <script>
+        const container = document.querySelector('.container');
+        container.addEventListener('click', () => {
+            container.classList.toggle('open');
+        })
+    </script>
 </body>
 </html>
